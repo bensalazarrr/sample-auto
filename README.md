@@ -79,7 +79,7 @@ tests/                   Playwright user journey and accessibility checks
 
 ## Configuration
 
-Update `src/lib/config.ts` to change contact details, `tel:` URL, email, address, hours, Messenger URL, and `siteUrl`. The site origin defaults to localhost; replace it with your verified deployment origin for social sharing. Placeholder values intentionally do not represent a real business. Messenger remains a clear inactive demo state until a valid `https://m.me/<business>` URL is configured. The footer credit is the reusable `DeveloperCredit` component and has no invented destination.
+Update `src/lib/config.ts` to change contact details, `tel:` URL, email, address, hours, Messenger URL, and `siteUrl`. The site origin is configured as https://sample-auto.vercel.app; update it if the production domain changes. Placeholder values intentionally do not represent a real business. Messenger remains a clear inactive demo state until a valid `https://m.me/<business>` URL is configured. The footer credit is the reusable `DeveloperCredit` component and has no invented destination.
 
 Themes use CSS variables in `src/app/globals.css`. Dark is the initial default. An early inline script restores the localStorage preference before painting; React subscribes to the resulting theme. If adding a Content Security Policy, allow the bootstrap script via a hash or nonce. Storage failures are handled gracefully. Motion and CSS honor reduced-motion preferences.
 
@@ -103,11 +103,11 @@ Automotive photographs are downloaded from Unsplash and bundled locally to avoid
 
 Product art, fallback, and social graphic are original SVG illustrations included in the source. Manrope uses the SIL Open Font License, distributed with `@fontsource-variable/manrope`. Lucide uses the ISC License. Regenerate illustrations with `node scripts/generate-art.mjs`.
 
-## Future deployment to Vercel
+## Deployment to Vercel
 
 The repository keeps the standard Next.js project layout and build scripts. No custom `vercel.json`, static export, backend service, or deployment credential is required for the current application. Next.js handles responsive local image optimization.
 
-When deployment is explicitly authorized, use these project settings:
+The existing Vercel project uses these settings:
 
 | Setting               | Value                              |
 | --------------------- | ---------------------------------- |
@@ -122,7 +122,7 @@ When deployment is explicitly authorized, use these project settings:
 
 Set `business.siteUrl` in `src/lib/config.ts` to the verified deployment origin before publishing so Open Graph image URLs resolve correctly. Keep `noindex, nofollow` for the fictional demo unless you intentionally change its indexing policy.
 
-The local Git repository uses `main`. No remote repository or deployment is configured by this setup. Creating a GitHub remote, pushing source, linking a Vercel project, or deploying should be performed only after explicit authorization. Local `.vercel/` files and environment files are ignored; sanitized `.env.example` files may be tracked if configuration is added later.
+The repository is [bensalazarrr/sample-auto](https://github.com/bensalazarrr/sample-auto), with `main` as the production branch. The Vercel project is `ben-f043/sample-auto`, with the configured production domain [sample-auto.vercel.app](https://sample-auto.vercel.app). Local `.vercel/` files and environment files are ignored; sanitized `.env.example` files may be tracked if configuration is added later.
 
 ## Dependency audit
 

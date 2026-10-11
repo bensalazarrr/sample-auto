@@ -1,6 +1,6 @@
 export const business = {
   name: "SAMPLE AUTO",
-  siteUrl: "http://localhost:3000",
+  siteUrl: "https://sample-auto.vercel.app",
   phone: "+63 900 000 0000",
   phoneHref: "tel:+639000000000",
   email: "hello@sampleauto.example",
